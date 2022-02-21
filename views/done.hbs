@@ -1,0 +1,16 @@
+<h2>Completed tasks</h2>
+{{#unless checkDone}}
+  <p>There are no completed tasks.</p>
+{{/unless}}
+<div class="done-container">
+  <ul>
+    {{#each todos}}
+      {{#if done}}
+        <li><a href="/todos/{{_id}}">{{formatted}} {{description}} </a>{{#if
+            done
+          }}✓{{/if}}
+        </li>
+      {{/if}}
+    {{/each}}
+  </ul>
+</div>

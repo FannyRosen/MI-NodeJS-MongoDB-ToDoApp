@@ -1,0 +1,15 @@
+<h2>Edit task</h2>
+
+<form action="/todos/{{_id}}/edit" method="post">
+  <input
+    type="text"
+    name="description"
+    placeholder="Task"
+    value="{{description}}"
+  />
+  <input type="checkbox" name="done" value="{{done}}" {{#if done}}checked{{/if}} />
+  <input type="submit" value="Save" />
+</form>
+{{#if error}}
+  <p>{{error}}</p>
+{{/if}}

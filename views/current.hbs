@@ -1,0 +1,16 @@
+<h2>Current tasks</h2>
+{{#unless checkDone}}
+  <p>There are no current tasks.</p>
+{{/unless}}
+<div class="current-container">
+  <ul>
+    {{#each todos}}
+      {{#unless done}}
+        <li><a href="/todos/{{_id}}">{{formatted}} {{description}} </a>{{#if
+            done
+          }}<div class="check-container">✓</div>{{/if}}
+        </li>
+      {{/unless}}
+    {{/each}}
+  </ul>
+</div>

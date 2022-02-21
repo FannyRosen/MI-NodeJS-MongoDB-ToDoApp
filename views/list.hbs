@@ -1,0 +1,23 @@
+<div class="task-container">
+  {{#unless todos}}
+    <p class="notask">No tasks to display</p>
+  {{/unless}}
+  {{#if error}}
+    <p>{{error}}</p>
+  {{/if}}
+  <ul>
+    {{#each todos}}
+      <li><a href="/todos/{{_id}}">{{formatted}} {{description}} </a>{{#if
+          done
+        }}<p class="checkmark">✓</p>{{/if}}
+      </li>
+    {{/each}}
+  </ul>
+</div>
+<div class="link-container">
+  <a href="/todos/done">Completed tasks</a>
+  <a href="/todos/current">Current tasks</a>
+</div>
+
+<a href="/todos/newest">Sort newest to oldest</a>
+<a href="/todos/oldest">Sort oldest to newest</a>
